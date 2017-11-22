@@ -18,15 +18,20 @@
 </head>
 <body>
 <form method="post" action="/SingleMessageServlet">
-    <table style="width:500px; margin:44px auto" class="table table-striped table-bordered table-hover  table-condensed" align='center' border='1' cellspacing='0'>
-        <tr>
-        <td><input type="submit" value="请输入您的学号" ></td>
-        <td><input type="text" name="sid" ></td>
-        </tr>
-    </table>
+    <%--<table style="width:500px; margin:44px auto" class="table table-striped table-bordered table-hover  table-condensed" align='center' border='1' cellspacing='0'>--%>
+
+    <%--</table>--%>
 </form>
 <table style="width:500px; margin:44px auto" class="table table-striped table-bordered table-hover  table-condensed" align='center' border='1' cellspacing='0'>
-
+    <tr>
+        <form method="post" action="/SingleMessageServlet">
+        <td><input type="submit" value="请输入您的学号" ></td>
+        <td><input type="text" name="sid" ></td>
+        </form>
+        <td colspan="2"><a href="addstudent.jsp" align="center">添加学生信息</a><br></td>
+        <td colspan="2"><a href="addscore.jsp" align="center">添加学生成绩</a><br></td>
+        <td colspan="2"><a href="/ScoreServlet" align="center">查询总例成绩</a><br></td>
+    </tr>
     <tr>
         <th>Sid</th>
         <th>Sname</th>
@@ -57,14 +62,14 @@
 </table>
 <center>
 
-    <a href="addstudent.jsp" align="center">添加学生信息</a><br>
-    <a href="addscore.jsp" align="center">添加学生成绩</a><br>
-    <a href="/ScoreServlet" align="center">查询总例成绩</a><br>
+    <%--<a href="addstudent.jsp" align="center">添加学生信息</a><br>--%>
+    <%--<a href="addscore.jsp" align="center">添加学生成绩</a><br>--%>
+    <%--<a href="/ScoreServlet" align="center">查询总例成绩</a><br>--%>
 
-  <%--<form method="post" action="/SingleMessageServlet">--%>
-      <%--<input type="submit" value="请输入您的学号" >--%>
-      <%--<input type="text" name="sid" height="15px">--%>
-  <%--</form>--%>
+  <form method="post" action="/SingleMessageServlet">
+      <input type="submit" value="请输入您的学号" >
+      <input type="text" name="sid" height="15px">
+  </form>
     <%--<a href="/SingleMessageServlet" align="center">查询单例</a>--%>
 
 
