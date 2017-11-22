@@ -10,12 +10,7 @@
 <html>
 <head>
     <title>学生信息列表</title>
-    <style>
 
-        td{
-            text-align:center;
-        }
-    </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
@@ -40,8 +35,8 @@
         <th>Sage</th>
         <th>Saddress</th>
 
-        <th>操作一</th>
-        <th>操作二</th>
+        <th>Action1</th>
+        <th>Action2</th>
         <%--<th>操作三</th>--%>
 
     </tr>
