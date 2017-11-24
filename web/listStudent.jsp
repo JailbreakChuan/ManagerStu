@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<html>
+<html lang="en" class="ie6 ielt7 ielt8 ielt9">
 <head>
     <title>学生信息列表</title>
 
@@ -15,7 +15,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
     <link href="css/site.css" rel="stylesheet">
-    <%--<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>--%>
+    <link href="css/textcenter.css" rel="stylesheet">
 </head>
 <body>
 <div class="container">
@@ -64,8 +64,8 @@
                             </ul>
                         </li>
                     </ul>
-                    <form class="navbar-search pull-left" method="post" action="">
-                        <input type="text" class="search-query span2" placeholder="Search" />
+                    <form class="navbar-search pull-left" method="post" action="/SingleMessageServlet">
+                        <input type="text" style="height: 28px" class="search-query span3" placeholder="Search" name="sid"/>
                     </form>
                     <ul class="nav pull-right">
                         <li>
@@ -84,40 +84,40 @@
             <div class="well" style="padding: 8px 0;">
                 <ul class="nav nav-list">
                     <li class="nav-header">
-                        Akira
+                        Function
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="addstudent.jsp"><i class="icon-cog"></i> 添加学生信息</a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="addscore.jsp"><i class="icon-cog"></i> 添加学生成绩</a>
                     </li>
                     <li class="active">
-                        <a href="/ScoreServlet" ><i class="icon-white icon-list-alt"></i>查询总例成绩</a>
+                        <a href="/ScoreServlet" ><i class="icon-white icon-list-alt"></i>成绩单</a>
                     </li>
                     <li>
-                        <a href="messages.htm"><i class="icon-envelope"></i> Messages</a>
+                        <a href="messages.htm"><i class="icon-envelope"></i>消息提醒</a>
                     </li>
                     <li>
-                        <a href="files.htm"><i class="icon-file"></i> Files</a>
+                        <a href="files.htm"><i class="icon-file"></i> 文件处理</a>
                     </li>
-                    <li class="active">
-                        <a href="activity.htm"><i class="icon-white icon-list-alt"></i> Activity</a>
+                    <li >
+                        <a href="activity.htm"><i class="icon-check"></i> 活动安排</a>
                     </li>
 
                     <li class="nav-header">
                         Your Account
                     </li>
                     <li>
-                        <a href="profile.htm"><i class="icon-user"></i> Profile</a>
+                        <a href="profile.htm"><i class="icon-user"></i> 个人简介</a>
                     </li>
                     <li>
-                        <a href="settings.htm"><i class="icon-cog"></i> Settings</a>
+                        <a href="settings.htm"><i class="icon-cog"></i> 设置</a>
                     </li>
                     <li class="divider">
                     </li>
                     <li>
-                        <a href="help.htm"><i class="icon-info-sign"></i> Help</a>
+                        <a href="help.htm"><i class="icon-info-sign"></i> 帮助</a>
                     </li>
                     <li class="nav-header">
                         Bonus Templates
@@ -131,26 +131,18 @@
                 </ul>
             </div>
         </div>
-        <div class="span4">
-            <h1>
+        <div class="span9">
+            <h2>
                 学生成绩管理系统
-            </h1>
+            </h2>
 
-            <form method="post" action="/SingleMessageServlet">
-                <%--<table style="width:500px; margin:44px auto" class="table table-striped table-bordered table-hover  table-condensed" align='center' border='1' cellspacing='0'>--%>
+            <%--<form method="post" action="/SingleMessageServlet">--%>
+                <%--&lt;%&ndash;<table style="width:500px; margin:44px auto" class="table table-striped table-bordered table-hover  table-condensed" align='center' border='1' cellspacing='0'>&ndash;%&gt;--%>
 
-                <%--</table>--%>
-            </form>
-            <table style="width:500px; margin:44px auto" class="table table-striped table-bordered table-hover  table-condensed" align='center' border='1' cellspacing='0'>
-                <tr>
-                    <form method="post" action="/SingleMessageServlet">
-                        <td><input type="submit" value="请输入您的学号" ></td>
-                        <td><input type="text" name="sid" ></td>
-                    </form>
-                    <td colspan="2"><a href="addstudent.jsp" align="center">添加学生信息</a><br></td>
-                    <td colspan="2"><a href="addscore.jsp" align="center">添加学生成绩</a><br></td>
-                    <td colspan="2"><a href="/ScoreServlet" align="center">查询总例成绩</a><br></td>
-                </tr>
+                <%--&lt;%&ndash;</table>&ndash;%&gt;--%>
+            <%--</form>--%>
+            <table class="table table-bordered">
+            <thead>
                 <tr>
                     <th>Sid</th>
                     <th>Sname</th>
@@ -162,8 +154,8 @@
                     <th>Action1</th>
                     <th>Action2</th>
                     <%--<th>操作三</th>--%>
-
                 </tr>
+            </thead>
                 <c:forEach items="${students}" var="student" varStatus="st">
                     <tr>
                         <td>${student.getSid()}</td>
@@ -173,11 +165,20 @@
                         <td>${student.getSage()}</td>
                         <td>${student.getSaddress()}</td>
 
-                        <td><a href="StudentEditServlet?Sid=${student.getSid()}">修改</a></td>
-                        <td><a href="StudentDeleteServlet?Sid=${student.getSid()}">删除</a></td>
+                        <td ><a href="StudentEditServlet?Sid=${student.getSid()}">Edit</a></td>
+                        <td><a href="StudentDeleteServlet?Sid=${student.getSid()}">Delete</a></td>
                             <%--<td><a href="">添加</a></td>--%>
                     </tr>
                 </c:forEach>
+                <%--<tr>--%>
+                    <%--<form method="post" action="/SingleMessageServlet">--%>
+                        <%--&lt;%&ndash;<td><input type="submit" value="请输入您的学号" ></td>&ndash;%&gt;--%>
+                        <%--<td><input type="text" name="sid" ></td>--%>
+                    <%--</form>--%>
+                    <%--<td colspan="2"><a href="addstudent.jsp" align="center">添加学生信息</a><br></td>--%>
+                    <%--<td colspan="2"><a href="addscore.jsp" align="center">添加学生成绩</a><br></td>--%>
+                    <%--<td colspan="2"><a href="/ScoreServlet" align="center">查询总例成绩</a><br></td>--%>
+                <%--</tr>--%>
             </table>
             <div class="pagination">
                 <ul>
@@ -261,6 +262,8 @@
 
 
 </center>
-
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/site.js"></script>
 </body>
 </html>
