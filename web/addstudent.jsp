@@ -23,7 +23,7 @@
 <body>
 <center>
 <form action="StudentAddServlet" method="post">
-    <table >
+    <table style="width:500px; margin:44px auto" class="table table-striped table-bordered table-hover  table-condensed" align='center' border='1' cellspacing='0'>
         <tr>
             <td>学号：</td>
             <td><input type="text" name="Sid"> <br></td>
@@ -50,8 +50,9 @@
         </tr>
         <tr>
             <td><input type="submit" value="增加学生信息 "></td>
-            <th><input type="reset" value="重置"></th>
-            <th><a href="/StudentListServlet" align="center">返回</a></th>
+            <th><input type="reset" value="重置">   </th>
+            <td> <a href="/StudentListServlet" align="center">返回</a></td>
+
         </tr>
     </table>
 </form>

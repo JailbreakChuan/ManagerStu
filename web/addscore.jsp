@@ -22,7 +22,7 @@
 <body>
 <center>
 <form action="addScoreServlet" method="post">
-    <table>
+    <table style="width:500px; margin:44px auto" class="table table-striped table-bordered table-hover  table-condensed" align='center' border='1' cellspacing='0'>
         <tr>
             <td>学号：</td>
             <td><input type="text" name="Sid"> <br></td>
