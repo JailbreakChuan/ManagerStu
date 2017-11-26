@@ -15,25 +15,17 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
     <link href="css/site.css" rel="stylesheet">
-    <link href="css/textcenter.css" rel="stylesheet">
+    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
 </head>
 <body>
 <div class="container">
     <div class="navbar">
         <div class="navbar-inner">
             <div class="container">
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> <a class="brand" href="#">Akira</a>
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> <a class="brand" href="#">Welcome</a>
                 <div class="nav-collapse">
                     <ul class="nav">
-                        <li>
-                            <a href="index.html">Dashboard</a>
-                        </li>
-                        <li>
-                            <a href="settings.htm">Account Settings</a>
-                        </li>
-                        <li>
-                            <a href="help.htm">Help</a>
-                        </li>
                         <li class="dropdown">
                             <a href="help.htm" class="dropdown-toggle" data-toggle="dropdown">Tours <b class="caret"></b></a>
                             <ul class="dropdown-menu">
@@ -63,6 +55,16 @@
                                 </li>
                             </ul>
                         </li>
+                        <li>
+                            <a href="index.html">Dashboard</a>
+                        </li>
+                        <%--<li>--%>
+                            <%--<a href="settings.htm">Account Settings</a>--%>
+                        <%--</li>--%>
+                        <li>
+                            <a href="help.htm">请输入您的学号:</a>
+                        </li>
+
                     </ul>
                     <form class="navbar-search pull-left" method="post" action="/SingleMessageServlet">
                         <input type="text" style="height: 28px" class="search-query span3" placeholder="Search" name="sid"/>
@@ -141,7 +143,7 @@
 
                 <%--&lt;%&ndash;</table>&ndash;%&gt;--%>
             <%--</form>--%>
-            <table class="table table-bordered">
+            <table class="table table-bordered table-striped">
             <thead>
                 <tr>
                     <th>Sid</th>
@@ -156,6 +158,7 @@
                     <%--<th>操作三</th>--%>
                 </tr>
             </thead>
+            <tbody>
                 <c:forEach items="${students}" var="student" varStatus="st">
                     <tr>
                         <td>${student.getSid()}</td>
@@ -179,6 +182,7 @@
                     <%--<td colspan="2"><a href="addscore.jsp" align="center">添加学生成绩</a><br></td>--%>
                     <%--<td colspan="2"><a href="/ScoreServlet" align="center">查询总例成绩</a><br></td>--%>
                 <%--</tr>--%>
+            </tbody>
             </table>
             <div class="pagination">
                 <ul>
