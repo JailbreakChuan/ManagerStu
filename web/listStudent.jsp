@@ -264,9 +264,7 @@
       <%--<input type="text" name="sid" height="15px">--%>
   <%--</form>--%>
     <%--<a href="/SingleMessageServlet" align="center">查询单例</a>--%>
-
-
-</center>
+<%--</center>--%>
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/site.js"></script>
