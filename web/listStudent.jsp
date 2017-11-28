@@ -12,6 +12,7 @@
     <title>学生信息列表</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
     <link href="css/site.css" rel="stylesheet">
@@ -74,7 +75,7 @@
                             <a href="profile.htm">@username</a>
                         </li>
                         <li>
-                            <a href="login.htm">Logout</a>
+                            <a href="newlogin.html">Logout</a>
                         </li>
                     </ul>
                 </div>
@@ -146,30 +147,30 @@
             <table class="table table-bordered table-striped">
             <thead>
                 <tr>
-                    <th>Sid</th>
-                    <th>Sname</th>
-                    <th>Sclass</th>
-                    <th>Scollege</th>
-                    <th>Sage</th>
-                    <th>Saddress</th>
+                    <th style="text-align: center">Sid</th>
+                    <th style="text-align: center">Sname</th>
+                    <th style="text-align: center">Sclass</th>
+                    <th style="text-align: center">Scollege</th>
+                    <th style="text-align: center">Sage</th>
+                    <th style="text-align: center">Saddress</th>
 
-                    <th>Action1</th>
-                    <th>Action2</th>
+                    <th style="text-align: center">Action1</th>
+                    <th style="text-align: center">Action2</th>
                     <%--<th>操作三</th>--%>
                 </tr>
             </thead>
             <tbody>
                 <c:forEach items="${students}" var="student" varStatus="st">
                     <tr>
-                        <td>${student.getSid()}</td>
-                        <td>${student.getSname()}</td>
-                        <td>${student.getSclass()}</td>
-                        <td>${student.getScollege()}</td>
-                        <td>${student.getSage()}</td>
-                        <td>${student.getSaddress()}</td>
+                        <td style="text-align: center">${student.getSid()}</td>
+                        <td style="text-align: center">${student.getSname()}</td>
+                        <td style="text-align: center">${student.getSclass()}</td>
+                        <td style="text-align: center">${student.getScollege()}</td>
+                        <td style="text-align: center">${student.getSage()}</td>
+                        <td style="text-align: center">${student.getSaddress()}</td>
 
-                        <td ><a href="StudentEditServlet?Sid=${student.getSid()}">Edit</a></td>
-                        <td><a href="StudentDeleteServlet?Sid=${student.getSid()}">Delete</a></td>
+                        <td style="text-align: center"><a href="StudentEditServlet?Sid=${student.getSid()}">Edit</a></td>
+                        <td style="text-align: center"><a href="StudentDeleteServlet?Sid=${student.getSid()}">Delete</a></td>
                             <%--<td><a href="">添加</a></td>--%>
                     </tr>
                 </c:forEach>

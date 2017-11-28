@@ -23,7 +23,7 @@
 		</div>
 		<div id="box">
 		     登录失败！请检查用户或者密码!<br>
-		  <a href="login.jsp">返回登录</a>   
+		  <a href="newlogin.html">返回登录</a>
 		</div>
 	</div>
 	</body>
