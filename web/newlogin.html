@@ -54,22 +54,22 @@
 <body class="login">
 
       <div class="form-signin">
-    <div class="text-center">
+    <div class="text-muted text-center">
         <h2>ChuanDemo</h2>
     </div>
     <hr>
     <div class="tab-content">
         <div id="login" class="tab-pane active">
             <form action="/LoginServlet" method="post">
-                <p class="text-muted text-center">
-                    Enter your username and password
-                </p>
+                <!--<p class="text-muted text-center">-->
+                    <!--Enter your username and password-->
+                <!--</p>-->
                 <input type="text" placeholder="Username" name="username" class="form-control top">
                 <input type="password" placeholder="Password" name="password" class="form-control bottom">
                 <div class="checkbox">
 		  <label><input type="checkbox"> Remember Me</label>
 		        </div>
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                <button class="btn btn-lg btn-success btn-block" type="submit">Sign in</button>
                 <input type="reset" value="Resert" class="btn btn-lg btn-primary btn-block">
             </form>
         </div>
@@ -84,7 +84,6 @@
         <div id="signup" class="tab-pane">
             <form action="/LoginServlet" method="post">
                 <input type="text" placeholder="username" class="form-control top">
-                <input type="email" placeholder="mail@domain.com" class="form-control middle">
                 <input type="password" placeholder="password" class="form-control middle">
                 <input type="password" placeholder="re-password" class="form-control bottom">
                 <button class="btn btn-lg btn-success btn-block" type="submit">Register</button>

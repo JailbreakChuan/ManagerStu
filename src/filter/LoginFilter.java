@@ -48,7 +48,7 @@ public class LoginFilter implements Filter {
         if(session.getAttribute("username")!=null){
             chain.doFilter(req, resp);
         }else{
-            response.sendRedirect("login.htm");
+            response.sendRedirect("newlogin.html");
         }
     }
 

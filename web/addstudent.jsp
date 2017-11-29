@@ -95,10 +95,10 @@
                         <a href="addscore.jsp"><i class="icon-cog"></i> 添加学生成绩</a>
                     </li>
                     <li class="active">
-                        <a href="/ScoreServlet" ><i class="icon-white icon-list-alt"></i>成绩单</a>
+                        <a href="/ScoreServlet" ><i class="icon-white icon-list-alt"></i> 成绩单</a>
                     </li>
                     <li>
-                        <a href="messages.htm"><i class="icon-envelope"></i>消息提醒</a>
+                        <a href="messages.htm"><i class="icon-envelope"></i> 消息提醒</a>
                     </li>
                     <li>
                         <a href="files.htm"><i class="icon-file"></i> 文件处理</a>
