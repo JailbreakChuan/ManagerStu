@@ -176,36 +176,6 @@
 
 
 
-<%--<table style="width:500px; margin:44px auto" class="table table-striped table-bordered table-hover  table-condensed" align='center' border='1' cellspacing='0'>--%>
-    <%--<tr>--%>
-    <%--<th>Sid</th>--%>
-    <%--<th>Sname</th>--%>
-    <%--<th>Sclass</th>--%>
-    <%--<th>Scollege</th>--%>
-    <%--<th>Sage</th>--%>
-    <%--<th>Saddress</th>--%>
-    <%--<th>Cname</th>--%>
-    <%--<th>Score</th>--%>
-    <%--</tr>--%>
-    <%--<c:forEach items="${sessionScope.Singlemess}" var="singleMessage">--%>
-        <%--<tr>--%>
-            <%--<td>${singleMessage.getSid()}</td>--%>
-            <%--<td>${singleMessage.getSname()}</td>--%>
-            <%--<td>${singleMessage.getSclass()}</td>--%>
-            <%--<td>${singleMessage.getScollege()}</td>--%>
-            <%--<td>${singleMessage.getSage()}</td>--%>
-            <%--<td>${singleMessage.getSaddress()}</td>--%>
-            <%--<td>${singleMessage.getCname()}</td>--%>
-            <%--<td>${singleMessage.getScore()}</td>--%>
-        <%--</tr>--%>
-    <%--</c:forEach>--%>
-    <%--<tr >--%>
-
-        <%--<td></td>--%>
-        <%--<td colspan="8" align="center"><a href="/StudentListServlet" align="center">返回</a></td>--%>
-
-    <%--</tr>--%>
-<%--</table>--%>
 
 </body>
 </html>

@@ -6,8 +6,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import javax.servlet.FilterChain;
 
-@WebFilter(filterName = "LoginFilter")
+
+//@WebFilter("/")
 public class LoginFilter implements Filter {
     private FilterConfig config;
 
@@ -16,39 +18,31 @@ public class LoginFilter implements Filter {
 
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
 
+        System.out.println("进入filter");
         HttpServletRequest request = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) resp;
+
         HttpSession session = request.getSession();
-
-        String noLoginPaths = config.getInitParameter("noLoginPaths");
-
-        String charset = config.getInitParameter("charset");
-        if(charset==null){
-            charset = "UTF-8";
-        }
-        request.setCharacterEncoding(charset);
-
-        if(noLoginPaths!=null){
-            String[] strArray = noLoginPaths.split(";");
-            for (int i = 0; i < strArray.length; i++) {
-
-                if(strArray[i]==null || "".equals(strArray[i]))continue;
-
-                if(request.getRequestURI().indexOf(strArray[i])!=-1 ){
-                    chain.doFilter(req, resp);
-                    return;
-                }
-            }
-
+        if (request.getRequestURI().endsWith("newlogin.html")){
+            chain.doFilter(req,resp);
+            System.out.println("new login --放过");
+            return;
         }
 
 
+        //从session里取的用户名信息
+        String username = (String) session.getAttribute("username");
+        System.out.println("username:"+username);
 
-
-        if(session.getAttribute("username")!=null){
-            chain.doFilter(req, resp);
-        }else{
-            response.sendRedirect("newlogin.html");
+        //判断如果没有取到用户信息,就跳转到登陆页面
+        if (username == null) {
+            //跳转到登陆页面
+            response.sendRedirect("/newlogin.html");
+            return;
+        }
+        else {
+            //已经登陆,继续此次请求
+            chain.doFilter(req,resp);
         }
     }
 

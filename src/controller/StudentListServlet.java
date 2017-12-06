@@ -19,41 +19,6 @@ public class StudentListServlet extends HttpServlet {
         List<Student> students = new StudentDaoImpl().list();
         request.setAttribute("students",students);
         request.getRequestDispatcher("listStudent.jsp").forward(request,response);
-//
-//        StringBuffer sb = new StringBuffer();
-//        sb.append("<table align='center' border='1' cellspacing='0'>\r\n");
-//        sb.append("<tr>" +
-//                "<th>学号</th>" +
-//                "<th>姓名</th>" +
-//                "<th>班级</th>" +
-//                "<th>系别</th>" +
-//                "<th>年龄</th>" +
-//                "<th>地址</th>" +
-//                "<th>修改</th>"+
-//                "<th>删除</th>"+
-//                "</tr>\r\n");
-//
-//        String trFormat = "<tr>" +
-//                "<td>%d</td>" +
-//                "<td>%s</td>" +
-//                "<td>%d</td>" +
-//                "<td>%s</td>" +
-//                "<td>%d</td>" +
-//                "<td>%s</td>" +
-//                "<td><a href='StudentEditServlet?Sid=%d'>edit</a></td>"+
-//                "<td><a href='StudentDeleteServlet?Sid=%d'>delete</a></td>"+
-//                "</tr>\r\n";
-//
-//        for (Student student : students) {
-//            String tr = String.format(trFormat, student.getSid(), student.getSname(),
-//                    student.getSclass(), student.getScollege(),student.getSage(),
-//                    student.getSaddress(),student.getSid(),student.getSid());
-//            sb.append(tr);
-//        }
-//
-//        sb.append("</table>");
-//
-//        response.getWriter().write(sb.toString());
 
 
     }

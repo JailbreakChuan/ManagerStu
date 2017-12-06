@@ -142,10 +142,10 @@
 
             <table class="table table-bordered table-striped">
                 <tr>
-                    <th style="text-align: center">Sid</th>
-                    <th style="text-align: center">Sname</th>
-                    <th style="text-align: center">Cname</th>
-                    <th style="text-align: center">Score</th>
+                    <th style="text-align: center">学号</th>
+                    <th style="text-align: center">姓名</th>
+                    <th style="text-align: center">课程名称</th>
+                    <th style="text-align: center">分数</th>
                 </tr>
                 <c:forEach items="${sessionScope.javascore}" var="score">
                     <tr>

@@ -147,12 +147,12 @@
             <table class="table table-bordered table-striped">
             <thead>
                 <tr>
-                    <th style="text-align: center">Sid</th>
-                    <th style="text-align: center">Sname</th>
-                    <th style="text-align: center">Sclass</th>
-                    <th style="text-align: center">Scollege</th>
-                    <th style="text-align: center">Sage</th>
-                    <th style="text-align: center">Saddress</th>
+                    <th style="text-align: center">学号</th>
+                    <th style="text-align: center">姓名</th>
+                    <th style="text-align: center">班级</th>
+                    <th style="text-align: center">系别</th>
+                    <th style="text-align: center">年龄</th>
+                    <th style="text-align: center">地址</th>
 
                     <th style="text-align: center">Action1</th>
                     <th style="text-align: center">Action2</th>

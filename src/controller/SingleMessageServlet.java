@@ -17,6 +17,7 @@ public class SingleMessageServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html; charset=UTF-8");
         Integer sid=Integer.parseInt(request.getParameter("sid"));
+
         System.err.println(sid);
         List<SingleMessage> Singlemess = new StudentDaoImpl().listSinglemess(sid);
         for(SingleMessage singlemess:Singlemess) System.out.println(singlemess.getSname());;
